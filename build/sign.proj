@@ -24,10 +24,10 @@
       <LocalizedEFToolsDLLs Include="$(RepositoryRootDirectory)bin\$(Configuration)\Microsoft.VisualStudio.Data.Tools.Design.XmlCore.dll" />
       <LocalizedEFToolsDLLs Include="$(LocOutDir)\**\*.resources.dll" />
 
-      <!-- EntityFramework NuGet package contents shipped in the VSIX.
-           These packages contain DLLs with SHA1-only Microsoft Authenticode
-           signatures. Re-sign with SHA256 (Microsoft400) before the VSIX
-           build packages them. -->
+      <!-- EntityFramework NuGet package contents embedded in the MSI.
+           These packages (EF 5.0, 6.x) contain DLLs with SHA1-only Microsoft
+           Authenticode signatures. Re-sign with SHA256 (Microsoft400) before
+           the WiX build packages them into EF6Tools.msi/cab. -->
       <MsiInputDlls Include="$(RepositoryRootDirectory)bin\$(Configuration)\MsiRuntimeInputs\packages\**\*.dll" />
       <MsiInputExes Include="$(RepositoryRootDirectory)bin\$(Configuration)\MsiRuntimeInputs\packages\**\*.exe" />
       <MsiInputPs1s Include="$(RepositoryRootDirectory)bin\$(Configuration)\MsiRuntimeInputs\packages\**\*.ps1" />
